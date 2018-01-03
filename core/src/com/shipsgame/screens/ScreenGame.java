@@ -85,6 +85,8 @@ public class ScreenGame extends ScreenAdapter {
     }
 
     public void initializeMap() {
+        this.gameRunning = true;
+        confirmButton.setVisible(false);
         this.map = new Map();
         this.mapInitialized = true;
     }

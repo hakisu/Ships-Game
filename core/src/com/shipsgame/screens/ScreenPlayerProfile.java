@@ -41,7 +41,7 @@ public class ScreenPlayerProfile extends ScreenAdapter {
         lastNameTextField.setVisible(false);
     }
 
-    public void updatePlayerData() {
+    private void updatePlayerData() {
         firstNameLabel.setText(shipsGame.getPlayerProfile().getFirstName());
         lastNameLabel.setText(shipsGame.getPlayerProfile().getLastName());
     }
@@ -83,13 +83,12 @@ public class ScreenPlayerProfile extends ScreenAdapter {
         TextButton changeLastNameTextButton = new TextButton("Modify", skin);
 
         infoTable.add(firstNameLabel).expandX().left();
-        infoTable.add(loginLabel).expandX().center();
         infoTable.add(lastNameLabel).expandX().right();
         infoTable.row();
-        infoTable.add(changeFirstNameTextButton).expandX().colspan(2).left();
+        infoTable.add(changeFirstNameTextButton).expandX().left();
         infoTable.add(changeLastNameTextButton).expandX().right();
         infoTable.row();
-        infoTable.add(firstNameTextField).colspan(2).left();
+        infoTable.add(firstNameTextField).left();
         infoTable.add(lastNameTextField).right();
 
 
@@ -117,6 +116,7 @@ public class ScreenPlayerProfile extends ScreenAdapter {
 
         rootTable.add(scoreHorizontalGroup).top().row();
         rootTable.add(infoTable).top().padTop(USER_INFO_TOP_PADDING).expand().fillX().row();
+        rootTable.add(loginLabel).row();
         rootTable.add(replaysScrollPane).padTop(REPLAYS_LABEL_TOP_PADDING).top().expand().row();
         rootTable.add(buttonsTable).padTop(RETURN_BUTTON_TOP_PADDING).expand().bottom();
         stage.addActor(rootTable);
